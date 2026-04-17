@@ -1,0 +1,73 @@
+Script complet pour Replit Agent : Application « The Kingdom’s Voice »
+Nom de l'application : The Kingdom’s Voice
+Objectif : Créer une plateforme spirituelle complète (Bible, Cours, Histoire de l'Église, Communauté) avec une architecture évolutive (du gratuit vers le premium).
+
+1. Instructions de Structure et de Design :
+
+Framework : React Native avec Expo.
+
+Design : Style "Royal & Épuré". Couleurs : Or (#D4AF37), Blanc Cassé (#F5F5DC), Bleu Nuit (#1A237E).
+
+Navigation : Tab Navigation (5 onglets) :
+
+Académie (Bible, Cours, Histoire).
+
+Cellules (Groupes privés).
+
+Live (Prières en direct).
+
+Carte (Géolocalisation).
+
+Profil (Paramètres et Partenariat).
+
+2. Architecture des Données (Supabase/Backend) :
+
+users : id, pseudo, type_abonnement (actuellement 'free', prêt pour 'student' et 'leader'), position_gps, est_mentor.
+
+content : id, type (cours, livre, histoire_eglise), titre, chapitre, texte, media_url, date_publication.
+
+cells : id, nom, code_invitation, leader_id.
+
+interactions : messages de chat, requêtes de prière, dons.
+
+3. Fonctionnalités détaillées à implémenter :
+
+Module Académie (Évolutif) :
+
+Section Bible : Lecteur fluide.
+
+Section Cours : Liste de livres bibliques avec progression (1 livre ajouté par mois).
+
+Section Histoire de l'Église : Chronologie interactive des grands événements et personnages.
+
+Note : Préparez un système de filtrage pour que je puisse ajouter du contenu progressivement sans coder à nouveau.
+
+Module Cellules de Prière (Responsable) :
+
+Interface de création de cellules privées avec code d'invitation.
+
+Chat de groupe en temps réel pour le partage et la prière.
+
+Note : Pour l'instant, l'accès est libre, mais prévoyez une variable de blocage pour le futur abonnement à 25€.
+
+Module Live & Dons :
+
+Page de streaming (simulée) pour les moments de prière.
+
+Bouton "Offrande" et section "Devenir Partenaire" avec intégration de paiement (Stripe).
+
+Module Communauté (Géolocalisation) :
+
+Carte interactive affichant les utilisateurs à proximité (avec option de masquage du profil).
+
+Système de "Réponses auto-générées" (IA) pour répondre aux questions bibliques sur les cours.
+
+4. Première mission pour l'Agent :
+"Peux-tu générer l'arborescence complète du projet, configurer la navigation par onglets et créer l'écran 'Académie' qui sépare bien les Cours, la Bible et l'Histoire de l'Église ? Tout doit être accessible gratuitement pour le moment, mais utilise une structure qui permettra d'activer les abonnements de 15€ et 25€ plus tard via Supabase."
+
+Conseils pour la gestion du contenu :
+L'onglet "Histoire de l'Église" : Demandez à l'Agent de créer un format "Story" (comme sur Instagram) ou une "Frise Chronologique". C'est beaucoup plus moderne et agréable à lire que de simples blocs de texte.
+
+Ajout progressif : Comme vous allez ajouter un livre par mois, demandez à l'Agent de vous créer un "Panneau d'administration" simplifié dans l'application (visible uniquement par vous) pour poster le nouveau contenu sans repasser par le code.
+
+L'IA : Pour les réponses auto-générées, demandez-lui d'utiliser l'API de ChatGPT (OpenAI) en lui donnant comme instruction : "Tu es l'assistant de l'application The Kingdom's Voice. Réponds de manière biblique et encourageante."
